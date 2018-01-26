@@ -1,0 +1,11 @@
+---
+- name: hello
+  hosts: all
+
+- name: homebrew playbook
+  hosts: all
+#  become: yes
+  roles:
+    - homebrew
+  tags:
+    - homebrew

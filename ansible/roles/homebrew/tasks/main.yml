@@ -1,0 +1,99 @@
+---
+# - name: brew tap
+#   shell: brew tap caskroom/cask caskroom/fonts homebrew/binary homebrew/dupes homebrew/versions
+
+# - homebrew: name={{ item }}
+#   with_items:
+#       - ruby
+#  state: present
+
+- name: homebrew tap
+  homebrew_tap: >
+    name=caskroom/cask,caskroom/fonts,homebrew/binary,homebrew/core,homebrew/dupes,homebrew/versions
+    state=present
+
+- name: homebrew
+  homebrew: >
+    name={{ item }}
+  with_items:
+    - coreutils
+    - findutils
+    - git
+    - gist
+    - tig
+    - hub
+    - ghq
+    - jid
+    - peco
+    - tmux
+    - reattach-to-user-namespace
+    - zsh
+    - zsh-completions
+    - ruby
+    # image
+    - imagemagick
+    - graphicsmagick
+    # database
+    - sqlite
+
+
+# packages=(
+#
+# #    homebrew/dupes/grep
+#
+#     sqlite
+#
+#     # Utils
+#     autoconf
+#     proctools
+#     automake
+#     openssl
+#     libyaml
+#     readline
+#     direnv
+#     xz
+#
+#     # Tools
+#     ack
+#     ag
+#     ctags
+#     curl
+#     dtrx
+#     fswatch
+#     nkf
+#     rmtrash
+#     tree
+#     wget
+#     htop-osx
+#     jq
+#     lv
+#     ant
+#     maven
+#     mercurial
+#     ngrep
+#     pstree
+#     pv
+#     rlwrap
+#     watch
+#     osxfuse
+#     googler
+#
+#     # Languages
+#     ruby
+#     rbenv
+#     ruby-build
+#     go
+#     python
+#     python3
+#     pyenv
+#     pyenv-virtualenv
+#     pyenv-virtualenvwrapper
+#     pyenv-which-ext
+#     nodebrew
+#
+#     # ops
+#     ansible
+#     boot2docker
+#     csshx
+#     packer
+# )
