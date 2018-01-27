@@ -73,3 +73,35 @@
     - watch
     - heroku
     - docker-machine
+
+- name: homebrew cask
+  homebrew_cask: >
+    name={{ item }} state=present
+  with_items:
+    - alfred
+    - android-studio
+    - appcleaner
+    - charles
+    - dash
+    - dropbox
+    - genymotion
+    - google-drive
+    - google-chrome
+    - imageoptim
+    - intellij-idea
+    - iterm2
+    - karabiner-elements
+    - kindle
+    - licecap
+    - mysqlworkbench
+    - quitter
+    - sequel-pro
+    - slack
+    - skype
+    - virtualbox
+    - vagrant
+    - java
+    - sketch
+    - slate
+    - sourcetree
+    - vlc
