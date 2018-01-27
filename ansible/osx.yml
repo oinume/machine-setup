@@ -1,7 +1,4 @@
 ---
-- name: hello
-  hosts: all
-
 - name: homebrew playbook
   hosts: all
 #  become: yes
@@ -9,3 +6,5 @@
     - homebrew
   tags:
     - homebrew
+  environment:
+    HOMEBREW_CASK_OPTS: "--appdir=/Applications"
