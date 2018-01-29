@@ -8,3 +8,10 @@
     - homebrew
   environment:
     HOMEBREW_CASK_OPTS: "--appdir=/Applications"
+
+# TODO:
+# - install mac app like firefox
+# - clone dotfiles
+# - set osx defaults
+# - install tmuxinator
+# - install npm stuff
