@@ -1,0 +1,107 @@
+---
+- name: homebrew tap
+  homebrew_tap: >
+    name=caskroom/cask,caskroom/fonts,homebrew/binary,homebrew/core,homebrew/dupes,homebrew/versions
+    state=present
+
+- name: homebrew
+  homebrew: >
+    name={{ item }}
+  with_items:
+    # shell
+    - zsh
+    - zsh-completions
+    - ruby
+    # image
+    - imagemagick
+    - graphicsmagick
+    # database
+    - sqlite
+    # languages
+    - ruby
+    - rbenv
+    - ruby-build
+    - go
+    - dep
+    - python
+    - python3
+    - pyenv
+    - pyenv-virtualenv
+    - pyenv-virtualenvwrapper
+    - pyenv-which-ext
+    - nodebrew
+    # ops
+    - csshx
+    - packer
+    # development tools
+    - coreutils
+    - findutils
+    - git
+    - gist
+    - tig
+    - hub
+    - ghq
+    - jid
+    - peco
+    - tmux
+    - reattach-to-user-namespace
+    - autoconf
+    - automake
+    - proctools
+    - openssl
+    - libyaml
+    - readline
+    - xz
+    - direnv
+    - ag
+    - ctags
+    - curl
+    - fswatch
+    - nkf
+    - rmtrash
+    - tree
+    - wget
+    - htop-osx
+    - jq
+    - lv
+    - maven
+    - mercurial
+    - ngrep
+    - pstree
+    - pv
+    - rlwrap
+    - watch
+    - heroku
+    - docker-machine
+
+- name: homebrew cask
+  homebrew_cask: >
+    name={{ item }} state=present
+  with_items:
+    - alfred
+    - android-studio
+    - appcleaner
+    - charles
+    - dash
+    - dropbox
+    - genymotion
+    - google-drive
+    - google-chrome
+    - imageoptim
+    - intellij-idea
+    - iterm2
+    - karabiner-elements
+    - kindle
+    - licecap
+    - mysqlworkbench
+    - quitter
+    - sequel-pro
+    - slack
+    - skype
+    - virtualbox
+    - vagrant
+    - java
+    - sketch
+    - slate
+    - sourcetree
+    - vlc
