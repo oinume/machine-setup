@@ -1,0 +1,12 @@
+---
+# Finder
+- name: Show Status bar in Finder
+  shell: defaults write com.apple.finder ShowStatusBar -bool true
+- name: Show Path bar in Finder
+  shell: defaults write com.apple.finder ShowPathbar -bool true
+- name: Show Tab bar in Finder
+  shell: defaults write com.apple.finder ShowTabView -bool true
+- name: Show the hidden files
+  shell: defaults write com.apple.finder AppleShowAllFiles YES
+- name: Show the Library directory
+  shell: chflags nohidden ~/Library
