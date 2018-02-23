@@ -1,7 +1,7 @@
 ---
 - name: homebrew tap
   homebrew_tap: >
-    name=caskroom/cask,caskroom/fonts,homebrew/binary,homebrew/core,homebrew/dupes,homebrew/versions
+    name=caskroom/cask,caskroom/fonts,homebrew/core
     state=present
 
 - name: homebrew
@@ -64,7 +64,6 @@
     - htop-osx
     - jq
     - lv
-    - maven
     - mercurial
     - ngrep
     - pstree
@@ -74,35 +73,48 @@
     - heroku
     - docker-machine
 
-- name: homebrew cask
+- name: homebrew cask necessary
   homebrew_cask: >
     name={{ item }} state=present
   with_items:
     - alfred
+    - dropbox
+    - google-chrome
+    - iterm2
+    - java
+    - slack
+
+- name: homebrew cask
+  homebrew_cask: >
+    name={{ item }} state=present
+  with_items:
     - android-studio
     - appcleaner
+    - atom
     - charles
     - dash
-    - dropbox
     - genymotion
-    - google-drive
-    - google-chrome
+    - google-drive-file-stream
     - imageoptim
     - intellij-idea
-    - iterm2
     - karabiner-elements
     - kindle
     - licecap
     - mysqlworkbench
     - quitter
     - sequel-pro
-    - slack
     - skitch
     - skype
     - virtualbox
     - vagrant
-    - java
     - sketch
     - slate
     - sourcetree
     - vlc
+
+- name: homebrew
+  homebrew: >
+    name={{ item }}
+  with_items:
+    - maven
+    - gradle
