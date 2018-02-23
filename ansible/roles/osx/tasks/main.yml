@@ -10,3 +10,6 @@
   shell: defaults write com.apple.finder AppleShowAllFiles YES
 - name: Show the Library directory
   shell: chflags nohidden ~/Library
+- name: Change screencapture save location
+  shell: mkdir -p ~/Documents/screenshot && defaults write com.apple.screencapture location ~/Documents/screenshot
+
