@@ -13,3 +13,5 @@
 - name: Change screencapture save location
   shell: mkdir -p ~/Documents/screenshot && defaults write com.apple.screencapture location ~/Documents/screenshot
 
+# GoogleJapaneseInput
+# ~/Library/Application Support/Google/JapaneseInput -> ~/Dropbox/apps/JapaneseInput
