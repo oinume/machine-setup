@@ -15,3 +15,14 @@
 
 # GoogleJapaneseInput
 # ~/Library/Application Support/Google/JapaneseInput -> ~/Dropbox/apps/JapaneseInput
+
+- name: Check ~/Dropbox/apps/JapaneseInput exists
+  stat:
+    path: "{{ ansible_env.HOME }}/Dropbox/apps/JapaneseInput"
+  register:
+    dropbox_apps_japanese_input_exists
+- name: symlink JapaneseInput
+  file:
+    state: link
+    src: "{{ ansible_env.HOME }}/Dropbox/apps/JapaneseInput"
+    dest: "{{ ansible_env.HOME }}/Library/Application Support/Google/JapaneseInput"
