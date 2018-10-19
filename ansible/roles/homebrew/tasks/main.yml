@@ -33,6 +33,7 @@
     # ops
     - csshx
     - packer
+    - kubernetes-cli
     # development tools
     - coreutils
     - findutils
@@ -102,6 +103,7 @@
     - kindle
     - licecap
     - macx-youtube-downloader
+    - minikube
     - mysqlworkbench
     - ngrok
     - quitter
