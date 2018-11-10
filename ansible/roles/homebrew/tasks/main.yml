@@ -71,7 +71,7 @@
     - pv
     - rlwrap
     - watch
-    - heroku
+    - heroku/brew/heroku
     - docker-machine
 
 - name: homebrew cask necessary
@@ -96,6 +96,7 @@
     - dash
     - genymotion
     - google-drive-file-stream
+    - google-cloud-sdk
     - imageoptim
     - intellij-idea
     - jetbrains-toolbox
