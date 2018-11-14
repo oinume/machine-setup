@@ -6,123 +6,127 @@
 
 - name: homebrew
   homebrew: >
-    name={{ item }}
-  with_items:
-    # shell
-    - zsh
-    - zsh-completions
-    - ruby
-    # image
-    - imagemagick
-    - graphicsmagick
-    # database
-    - sqlite
-    # languages
-    - ruby
-    - rbenv
-    - ruby-build
-    - go
-    - dep
-    - python
-    - python3
-    - pyenv
-    - pyenv-virtualenv
-    - pyenv-virtualenvwrapper
-    - pyenv-which-ext
-    - nodebrew
-    # ops
-    - csshx
-    - packer
-    - kubernetes-cli
-    # development tools
-    - coreutils
-    - findutils
-    - git
-    - gist
-    - tig
-    - hub
-    - ghq
-    - jid
-    - peco
-    - tmux
-    - reattach-to-user-namespace
-    - autoconf
-    - automake
-    - proctools
-    - openssl
-    - libyaml
-    - readline
-    - xz
-    - direnv
-    - ag
-    - ctags
-    - curl
-    - fswatch
-    - nkf
-    - rmtrash
-    - tree
-    - wget
-    - htop-osx
-    - jq
-    - lv
-    - mercurial
-    - ngrep
-    - pstree
-    - pv
-    - rlwrap
-    - watch
-    - heroku/brew/heroku
-    - docker-machine
+    name={{ packages }} state=present
+  vars:
+    packages:
+      # shell
+      - zsh
+      - zsh-completions
+      - ruby
+      # image
+      - imagemagick
+      - graphicsmagick
+      # database
+      - sqlite
+      # languages
+      - ruby
+      - rbenv
+      - ruby-build
+      - go
+      - dep
+      - python
+      - python3
+      - pyenv
+      - pyenv-virtualenv
+      - pyenv-virtualenvwrapper
+      - pyenv-which-ext
+      - nodebrew
+      # ops
+      - csshx
+      - packer
+      - kubernetes-cli
+      # development tools
+      - coreutils
+      - findutils
+      - git
+      - gist
+      - tig
+      - hub
+      - ghq
+      - jid
+      - peco
+      - tmux
+      - reattach-to-user-namespace
+      - autoconf
+      - automake
+      - proctools
+      - openssl
+      - libyaml
+      - readline
+      - xz
+      - direnv
+      - ag
+      - ctags
+      - curl
+      - fswatch
+      - nkf
+      - rmtrash
+      - tree
+      - wget
+      - htop-osx
+      - jq
+      - lv
+      - mercurial
+      - ngrep
+      - pstree
+      - pv
+      - rlwrap
+      - watch
+      - heroku/brew/heroku
+      - docker-machine
 
 - name: homebrew cask necessary
   homebrew_cask: >
-    name={{ item }} state=present
-  with_items:
-    - alfred
-    - dropbox
-    - google-chrome
-    - iterm2
-    - java
-    - slack
+    name={{ packages }} state=present
+  vars:
+    packages:
+      - alfred
+      - dropbox
+      - google-chrome
+      - iterm2
+      - java
+      - slack
 
 - name: homebrew cask
   homebrew_cask: >
-    name={{ item }} state=present
-  with_items:
-    - android-studio
-    - appcleaner
-    - atom
-    - charles
-    - contexts
-    - dash
-    - genymotion
-    - google-drive-file-stream
-    - google-cloud-sdk
-    - imageoptim
-    - intellij-idea
-    - jetbrains-toolbox
-    - karabiner-elements
-    - kindle
-    - licecap
-    - macx-youtube-downloader
-    - minikube
-    - mysqlworkbench
-    - ngrok
-    - quitter
-    - sequel-pro
-    - skitch
-    - skype
-    - virtualbox
-    - vagrant
-    - sketch
-    - slate
-    - sourcetree
-    - youtube-to-mp3
-    - vlc
+    name={{ packages }} state=present
+  vars:
+    packages:
+      - android-studio
+      - appcleaner
+      - atom
+      - charles
+      - contexts
+      - dash
+      - genymotion
+      - google-drive-file-stream
+      - google-cloud-sdk
+      - imageoptim
+      - intellij-idea
+      - jetbrains-toolbox
+      - karabiner-elements
+      - kindle
+      - licecap
+      - macx-youtube-downloader
+      - minikube
+      - mysqlworkbench
+      - ngrok
+      - quitter
+      - sequel-pro
+      - skitch
+      - skype
+      - virtualbox
+      - vagrant
+      - sketch
+      - slate
+      - sourcetree
+      - youtube-to-mp3
+      - vlc
 
 - name: homebrew
   homebrew: >
-    name={{ item }}
-  with_items:
-    - maven
-    - gradle
+    name={{ item }} state=present
+  vars:
+    packages:
+      - maven
+      - gradle
