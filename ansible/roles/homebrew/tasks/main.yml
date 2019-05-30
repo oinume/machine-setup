@@ -47,6 +47,7 @@
       - ghq
       - jid
       - peco
+      - fzf
       - tmux
       - reattach-to-user-namespace
       - autoconf
