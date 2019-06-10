@@ -48,6 +48,7 @@
       - jid
       - peco
       - fzf
+      - ripgrep
       - tmux
       - reattach-to-user-namespace
       - autoconf
