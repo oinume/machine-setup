@@ -49,6 +49,7 @@
       - peco
       - fzf
       - ripgrep
+      - fasd
       - tmux
       - reattach-to-user-namespace
       - autoconf
