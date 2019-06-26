@@ -11,7 +11,7 @@
     packages:
       # shell
       - bash
-      - bash_completion@2
+      - bash-completion@2
       - zsh
       - zsh-completions
       - ruby
