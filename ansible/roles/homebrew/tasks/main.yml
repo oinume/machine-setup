@@ -11,7 +11,7 @@
     packages:
       # shell
       - bash
-      - bash_completion@2
+      - bash-completion@2
       - zsh
       - zsh-completions
       - ruby
@@ -48,6 +48,8 @@
       - jid
       - peco
       - fzf
+      - ripgrep
+      - fasd
       - tmux
       - reattach-to-user-namespace
       - autoconf
