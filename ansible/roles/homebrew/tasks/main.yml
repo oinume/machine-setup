@@ -91,6 +91,7 @@
       - google-chrome
       - iterm2
       - java
+      - homebrew/cask-versions/adoptopenjdk8
       - slack
 
 - name: homebrew cask
