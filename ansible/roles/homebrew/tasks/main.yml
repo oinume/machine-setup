@@ -89,7 +89,7 @@
     packages:
       - alfred
       - dropbox
-      - google-chrome
+#      - google-chrome
       - iterm2
       - java
       - homebrew/cask-versions/adoptopenjdk8
@@ -103,6 +103,7 @@
       - android-studio
       - appcleaner
       - atom
+      - bettertouchtool
       - charles
       - contexts
       - dash
@@ -117,6 +118,7 @@
       - licecap
       - macx-youtube-downloader
       - minikube
+      - multipass
       - mysqlworkbench
       - ngrok
       - quitter
@@ -133,7 +135,7 @@
 
 - name: homebrew
   homebrew: >
-    name={{ item }} state=present
+    name={{ packages }} state=present
   vars:
     packages:
       - maven
