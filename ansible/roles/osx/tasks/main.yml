@@ -12,11 +12,11 @@
   shell: chflags nohidden ~/Library
 
 # KeyRepeat
-# https://apple.stackexchange.com/questions/91168/command-delete-shortcut-is-not-working-for-me
+# https://apple.stackexchange.com/questions/10467/how-to-increase-keyboard-key-repeat-rate-on-os-x
 - name: Change KeyRepeat speed
   shell: |
-    defaults write -g InitialKeyRepeat -int 10
-    defaults write -g KeyRepeat -int 1
+    defaults write -g InitialKeyRepeat -int 15
+    defaults write -g KeyRepeat -int 2
 
 - name: Change screencapture save location
   shell: mkdir -p ~/Documents/screenshot && defaults write com.apple.screencapture location ~/Documents/screenshot
