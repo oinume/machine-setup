@@ -12,6 +12,7 @@
   shell: chflags nohidden ~/Library
 
 # KeyRepeat
+# https://apple.stackexchange.com/questions/91168/command-delete-shortcut-is-not-working-for-me
 - name: Change KeyRepeat speed
   shell: |
     defaults write -g InitialKeyRepeat -int 10
