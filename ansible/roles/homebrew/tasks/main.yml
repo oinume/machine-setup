@@ -1,7 +1,7 @@
 ---
 - name: homebrew tap
   homebrew_tap: >
-    name=caskroom/cask,caskroom/fonts,homebrew/core,jesseduffield/lazydocker
+    name=homebrew/core,jesseduffield/lazydocker
     state=present
 
 - name: homebrew
