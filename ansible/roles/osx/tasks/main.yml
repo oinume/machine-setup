@@ -10,19 +10,26 @@
   shell: defaults write com.apple.finder AppleShowAllFiles YES
 - name: Show the Library directory
   shell: chflags nohidden ~/Library
+
+# KeyRepeat
+- name: Change KeyRepeat speed
+  shell: |
+    defaults write -g InitialKeyRepeat -int 10
+    defaults write -g KeyRepeat -int 1
+
 - name: Change screencapture save location
   shell: mkdir -p ~/Documents/screenshot && defaults write com.apple.screencapture location ~/Documents/screenshot
 
 # GoogleJapaneseInput
 # ~/Library/Application Support/Google/JapaneseInput -> ~/Dropbox/apps/JapaneseInput
 
-- name: Check ~/Dropbox/apps/JapaneseInput exists
-  stat:
-    path: "{{ ansible_env.HOME }}/Dropbox/apps/JapaneseInput"
-  register:
-    dropbox_apps_japanese_input_exists
-- name: symlink JapaneseInput
-  file:
-    state: link
-    src: "{{ ansible_env.HOME }}/Dropbox/apps/JapaneseInput"
-    dest: "{{ ansible_env.HOME }}/Library/Application Support/Google/JapaneseInput"
+#- name: Check ~/Dropbox/apps/JapaneseInput exists
+#  stat:
+#    path: "{{ ansible_env.HOME }}/Dropbox/apps/JapaneseInput"
+#  register:
+#    dropbox_apps_japanese_input_exists
+#- name: symlink JapaneseInput
+#  file:
+#    state: link
+#    src: "{{ ansible_env.HOME }}/Dropbox/apps/JapaneseInput"
+#    dest: "{{ ansible_env.HOME }}/Library/Application Support/Google/JapaneseInput"
