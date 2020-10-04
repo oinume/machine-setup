@@ -82,6 +82,7 @@
       - docker-machine
       - goreleaser
       - lazydocker
+      - mysql
 
 - name: homebrew cask necessary
   homebrew_cask: >
