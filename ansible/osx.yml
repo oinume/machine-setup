@@ -17,7 +17,6 @@
     HOMEBREW_CASK_OPTS: "--appdir=/Applications"
 
 # TODO:
-# - install mac app like firefox
 # - clone dotfiles
 # - install tmuxinator
 # - install npm stuff

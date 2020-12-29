@@ -18,6 +18,7 @@
       # image
       - imagemagick
       - graphicsmagick
+      - graphviz
       # database
       - sqlite
       # languages
@@ -81,6 +82,7 @@
       - docker-machine
       - goreleaser
       - lazydocker
+      - mysql
 
 - name: homebrew cask necessary
   homebrew_cask: >
@@ -88,7 +90,7 @@
   vars:
     packages:
       - alfred
-      - dropbox
+#      - dropbox
 #      - google-chrome
       - iterm2
       - java
