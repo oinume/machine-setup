@@ -7,6 +7,7 @@
 - name: homebrew
   homebrew: >
     name={{ packages }} state=present
+#    path=/opt/homebrew/bin
   vars:
     packages:
       # shell
@@ -66,7 +67,6 @@
       - curl
       - fswatch
       - nkf
-      - rmtrash
       - tree
       - wget
       - htop-osx
@@ -85,7 +85,7 @@
       - mysql
 
 - name: homebrew cask necessary
-  homebrew_cask: >
+  homebrew: >
     name={{ packages }} state=present
   vars:
     packages:
@@ -98,18 +98,18 @@
       - slack
 
 - name: homebrew cask
-  homebrew_cask: >
+  homebrew: >
     name={{ packages }} state=present
   vars:
     packages:
-      - android-studio
+#      - android-studio
       - appcleaner
       - authy
       - bettertouchtool
       - charles
       - contexts
       - dash
-      - genymotion
+#      - genymotion
       - google-drive-file-stream
       - google-cloud-sdk
       - imageoptim
