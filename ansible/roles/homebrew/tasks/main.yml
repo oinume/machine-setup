@@ -27,16 +27,13 @@
       - rbenv
       - ruby-build
       - go
-      - dep
       - python
       - python3
       - pyenv
       - pyenv-virtualenv
       - pyenv-virtualenvwrapper
-      - pyenv-which-ext
-      - nodebrew
+      - nvm 
       # ops
-      - csshx
       - packer
       - kubernetes-cli
       # development tools
@@ -44,6 +41,7 @@
       - findutils
       - git
       - gist
+      - gh
       - tig
       - hub
       - ghq
@@ -51,7 +49,7 @@
       - peco
       - fzf
       - ripgrep
-      - fasd
+#      - fasd
       - tmux
       - reattach-to-user-namespace
       - autoconf
@@ -89,13 +87,12 @@
     name={{ packages }} state=present
   vars:
     packages:
-      - alfred
-#      - dropbox
-#      - google-chrome
-      - iterm2
-      - java
-      - homebrew/cask-versions/adoptopenjdk8
-      - slack
+#     - dropbox
+#     - google-chrome
+     - iterm2
+     - java
+     - raycast
+     - slack
 
 - name: homebrew cask
   homebrew: >
@@ -108,18 +105,14 @@
       - bettertouchtool
       - charles
       - contexts
-      - dash
 #      - genymotion
-      - google-drive-file-stream
       - google-cloud-sdk
       - imageoptim
-      - intellij-idea
       - jetbrains-toolbox
       - karabiner-elements
       - kindle
       - licecap
       - macx-youtube-downloader
-      - minikube
       - multipass
       - ngrok
       - sequel-pro
@@ -128,8 +121,6 @@
       - virtualbox
       - visual-studio-code
       - vagrant
-      - sketch
-      - slate
       - sourcetree
       - youtube-to-mp3
       - vlc
