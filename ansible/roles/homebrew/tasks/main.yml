@@ -60,7 +60,6 @@
       - readline
       - xz
       - direnv
-      - ag
       - ctags
       - curl
       - fswatch
@@ -111,8 +110,8 @@
       - kindle
       - macx-youtube-downloader
       - ngrok
-      - skitch
       - skype
+      - tailscale
       - virtualbox
       - visual-studio-code
       - vagrant
