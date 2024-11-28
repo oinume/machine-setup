@@ -101,27 +101,21 @@
     packages:
 #      - android-studio
       - appcleaner
-      - authy
       - bettertouchtool
       - charles
-      - contexts
 #      - genymotion
       - google-cloud-sdk
       - imageoptim
       - jetbrains-toolbox
       - karabiner-elements
       - kindle
-      - licecap
       - macx-youtube-downloader
-      - multipass
       - ngrok
-      - sequel-pro
       - skitch
       - skype
       - virtualbox
       - visual-studio-code
       - vagrant
-      - sourcetree
       - youtube-to-mp3
       - vlc
 
