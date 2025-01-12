@@ -27,11 +27,7 @@
       - rbenv
       - ruby-build
       - go
-      - python
       - python3
-      - pyenv
-      - pyenv-virtualenv
-      - pyenv-virtualenvwrapper
       - nvm 
       # ops
       - packer
@@ -42,14 +38,12 @@
       - git
       - gist
       - gh
-      - tig
       - hub
       - ghq
       - jid
       - peco
       - fzf
       - ripgrep
-#      - fasd
       - tmux
       - reattach-to-user-namespace
       - autoconf
@@ -76,9 +70,7 @@
       - rlwrap
       - watch
       - heroku/brew/heroku
-      - docker-machine
       - goreleaser
-      - lazydocker
       - mysql
 
 - name: homebrew cask necessary
@@ -115,7 +107,6 @@
       - virtualbox
       - visual-studio-code
       - vagrant
-      - youtube-to-mp3
       - vlc
 
 - name: homebrew
