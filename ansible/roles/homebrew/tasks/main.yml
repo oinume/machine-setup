@@ -1,118 +1,29 @@
 ---
-- name: homebrew tap
-  homebrew_tap: >
-    name=homebrew/core,jesseduffield/lazydocker
-    state=present
+- name: Check if Homebrew is installed
+  stat:
+    path: /opt/homebrew/bin/brew
+  register: homebrew_check
 
-- name: homebrew
-  homebrew: >
-    name={{ packages }} state=present
-#    path=/opt/homebrew/bin
-  vars:
-    packages:
-      # shell
-      - bash
-      - bash-completion@2
-      - zsh
-      - zsh-completions
-      - ruby
-      # image
-      - imagemagick
-      - graphicsmagick
-      - graphviz
-      # database
-      - sqlite
-      # languages
-      - ruby
-      - rbenv
-      - ruby-build
-      - go
-      - python3
-      - nvm 
-      # ops
-      - packer
-      - kubernetes-cli
-      # development tools
-      - coreutils
-      - findutils
-      - git
-      - gist
-      - gh
-      - hub
-      - ghq
-      - jid
-      - peco
-      - fzf
-      - ripgrep
-      - tmux
-      - reattach-to-user-namespace
-      - autoconf
-      - automake
-      - proctools
-      - openssl
-      - libyaml
-      - readline
-      - xz
-      - direnv
-      - ctags
-      - curl
-      - fswatch
-      - nkf
-      - tree
-      - wget
-      - htop-osx
-      - jq
-      - lv
-      - mercurial
-      - ngrep
-      - pstree
-      - pv
-      - rlwrap
-      - watch
-      - heroku/brew/heroku
-      - goreleaser
-      - mysql
+# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-- name: homebrew cask necessary
-  homebrew: >
-    name={{ packages }} state=present
-  vars:
-    packages:
-#     - dropbox
-#     - google-chrome
-     - iterm2
-     - java
-     - raycast
-     - slack
+- name: Download Homebrew installation script
+  get_url:
+    url: https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+    dest: /tmp/homebrew_install.sh
+    mode: "0755"
+  when: not homebrew_check.stat.exists
 
-- name: homebrew cask
-  homebrew: >
-    name={{ packages }} state=present
-  vars:
-    packages:
-#      - android-studio
-      - appcleaner
-      - bettertouchtool
-      - charles
-#      - genymotion
-      - google-cloud-sdk
-      - imageoptim
-      - jetbrains-toolbox
-      - karabiner-elements
-      - kindle
-      - macx-youtube-downloader
-      - ngrok
-      - skype
-      - tailscale
-      - virtualbox
-      - visual-studio-code
-      - vagrant
-      - vlc
+- name: Install Homebrew
+  shell: /bin/bash /tmp/homebrew_install.sh
+  when: not homebrew_check.stat.exists
 
-- name: homebrew
-  homebrew: >
-    name={{ packages }} state=present
-  vars:
-    packages:
-      - maven
-      - gradle
+- name: Clean up installation script
+  file:
+    path: /tmp/homebrew_install.sh
+    state: absent
+  when: not homebrew_check.stat.exists
+
+- name: Install packages from Brewfile
+  shell: brew bundle --file={{ ansible_env.HOME }}/Brewfile
+  register: brew_bundle_result
+  changed_when: brew_bundle_result.stdout != ""
