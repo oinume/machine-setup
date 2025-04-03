@@ -13,3 +13,8 @@ brew install ansible
 $ cd ansible
 $ ansible-playbook -v -i ./inventory/default ./osx.yml
 ```
+
+# Tips
+
+## macOS
+https://dev.classmethod.jp/articles/mac-recommended-initial-settings/
